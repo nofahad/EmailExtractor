@@ -8,7 +8,10 @@ const text = fs.readFileSync('test.txt',{encoding: "utf8"});
 
 function extractEmails (content) {              
     return content.match(/([a-zA-Z0-9.'_%+-]+@[softwire]+\.[com]+)/gi);
+    //return content.match(/(?<=[a-z])(@softwire.com)(?=>[a-z])/gi);
+    //return content.match (/?<=[\s]([a-z]+@softwire.com)(?=[\s])/gi)
 }
+
 
 // function extractEmails (content) {  
 //   return content.match(/([a-zA-Z0-9.'_%+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);

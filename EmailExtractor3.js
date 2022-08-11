@@ -25,17 +25,20 @@ const Dictionary = Object.fromEntries(allDomains.map(d => [d, allEmails.filter(e
 
 console.log(Dictionary);
 
-//console.log(uniqueDomains);
+//Validate UK Mobile Phone Number
+function parsePhoneNumber(phonenumber){
 
+    if(phonenumber == phonenumber.match(/((\+[0-9]{1,2}\s)|0)((([0-9]{3})\s){2}([0-9]{4})|(([0-9]{4})\s)([0-9]{6}))/g)){
+        return true;
+    }else{
+        return false;
+    }
 
+}
 
-//console.log(`Total Domains found : ${extractDomains(text)}`);
+console.log(parsePhoneNumber("+44 7777 737 767"))
 
-// function extractEmails (test) {
-//     return test.match(/([a-zA-Z0-9.'_%+-]+@[techswitch]+\.[co]+\.[uk]+)/gi);
-    
-// } returned 163
+console.log(parsePhoneNumber("07403 036844"))
 
-//console.log(`Total number of email addresses found : ${extractEmails(text).length}`);
 
 
